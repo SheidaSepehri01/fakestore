@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/fakestore/static/css/main.5e018d9b.css",
+    "main.js": "/fakestore/static/js/main.a3610c56.js",
+    "static/js/787.6148a7f3.chunk.js": "/fakestore/static/js/787.6148a7f3.chunk.js",
+    "static/media/alina-rubo-HjO5vw_PP5c-unsplash.jpg": "/fakestore/static/media/alina-rubo-HjO5vw_PP5c-unsplash.2e76ceeba5e52164ee48.jpg",
+    "static/media/serghei-savchiuc-_mQ37Rxqb9E-unsplash.jpg": "/fakestore/static/media/serghei-savchiuc-_mQ37Rxqb9E-unsplash.c6e132d50ae1b3b4b82c.jpg",
+    "static/media/kevs-VsnjiMUt7Cg-unsplash.jpg": "/fakestore/static/media/kevs-VsnjiMUt7Cg-unsplash.68147b709ee889ebd261.jpg",
+    "static/media/marvin-meyer-SYTO3xs06fU-unsplash.jpg": "/fakestore/static/media/marvin-meyer-SYTO3xs06fU-unsplash.63f3dda3eab35f8fcd02.jpg",
+    "static/media/georgi-dyulgerov-ZdlwPqLQcGU-unsplash.jpg": "/fakestore/static/media/georgi-dyulgerov-ZdlwPqLQcGU-unsplash.60b9c47a7270e39e0785.jpg",
+    "static/media/surface-gYDNf4vymRk-unsplash.jpg": "/fakestore/static/media/surface-gYDNf4vymRk-unsplash.cd86be2f1179514cb832.jpg",
+    "static/media/darklammur-oRgeDVPL1ks-unsplash.jpg": "/fakestore/static/media/darklammur-oRgeDVPL1ks-unsplash.7345970e69dbc7856788.jpg",
+    "static/media/jonas-leupe-wK-elt11pF0-unsplash.jpg": "/fakestore/static/media/jonas-leupe-wK-elt11pF0-unsplash.85e4061eda6af72a8a3e.jpg",
+    "static/media/kara-eads-buhmhprfo3g-unsplash.jpg": "/fakestore/static/media/kara-eads-buhmhprfo3g-unsplash.586465e6a6accdeaab27.jpg",
+    "static/media/camille-paralisan-LgoehzzFAMA-unsplash.jpg": "/fakestore/static/media/camille-paralisan-LgoehzzFAMA-unsplash.1283f98e6f3ac412ced5.jpg",
+    "static/media/jonas-leupe-WargGLQW_Yk-unsplash.jpg": "/fakestore/static/media/jonas-leupe-WargGLQW_Yk-unsplash.76fc294e055b6a77eec1.jpg",
+    "static/media/phillip-goldsberry-fZuleEfeA1Q-unsplash.jpg": "/fakestore/static/media/phillip-goldsberry-fZuleEfeA1Q-unsplash.6427d3dac98d4bde9e67.jpg",
+    "static/media/carol-magalhaes-dSsXm15D9hg-unsplash.jpg": "/fakestore/static/media/carol-magalhaes-dSsXm15D9hg-unsplash.10030e439aae81993cc5.jpg",
+    "static/media/content-pixie-ZB4eQcNqVUs-unsplash.jpg": "/fakestore/static/media/content-pixie-ZB4eQcNqVUs-unsplash.92c0137206366f8c6b84.jpg",
+    "static/media/crystalweed-cannabis-QrK0mgbk2r0-unsplash.jpg": "/fakestore/static/media/crystalweed-cannabis-QrK0mgbk2r0-unsplash.e622f59bb855ec99153f.jpg",
+    "static/media/inside-weather-OzqieLcs464-unsplash.jpg": "/fakestore/static/media/inside-weather-OzqieLcs464-unsplash.7cca266d1322c7082ddd.jpg",
+    "static/media/nick-fewings-1SsUquHPNT8-unsplash.jpg": "/fakestore/static/media/nick-fewings-1SsUquHPNT8-unsplash.087f07bc1afe5823cc25.jpg",
+    "static/media/camille-brodard-VxAwTeiqDao-unsplash.jpg": "/fakestore/static/media/camille-brodard-VxAwTeiqDao-unsplash.50cc1f5fae47638bffc0.jpg",
+    "static/media/charlesdeluvio-1-nx1QR5dTE-unsplash.jpg": "/fakestore/static/media/charlesdeluvio-1-nx1QR5dTE-unsplash.0b5438202adcd665afae.jpg",
+    "index.html": "/fakestore/index.html",
+    "main.5e018d9b.css.map": "/fakestore/static/css/main.5e018d9b.css.map",
+    "main.a3610c56.js.map": "/fakestore/static/js/main.a3610c56.js.map",
+    "787.6148a7f3.chunk.js.map": "/fakestore/static/js/787.6148a7f3.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e018d9b.css",
+    "static/js/main.a3610c56.js"
+  ]
+}
