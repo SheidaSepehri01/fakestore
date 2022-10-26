@@ -1,0 +1,69 @@
+@import "../../style/var&colors.scss";
+.carousel-box {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  position: relative;
+  box-shadow: -6px 4px 9px 0px $box-shadow;
+  /* From https://css.glass */
+  background: rgba(199, 199, 199, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(1.8px);
+  -webkit-backdrop-filter: blur(1.8px);
+  .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: calc(2em + 1vw);
+    color: #fff;
+    z-index: 1;
+    position: absolute;
+    transition: 0.3s;
+    a {
+      margin: 0.5em;
+      transition: 0.3s;
+    }
+  }
+  .buttons a:hover {
+    scale: 1.5;
+    color: $Button;
+  }
+  .slide {
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1em;
+    }
+  }
+}
+.dot-box {
+  display: flex;
+  gap: 1em;
+  margin: 1em;
+  height: 5%;
+  .dot {
+    background: $inactive;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  .dot:hover {
+    width: 1.3em;
+    height: 1.3em;
+    background: $Button;
+  }
+  .dot.active {
+    background: $Button;
+    width: 2em;
+    border-radius: 2em;
+  }
+}

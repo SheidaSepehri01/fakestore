@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
+
+$Button: #137547;
+$lightButton: #A7D49B;
+$alert: #da2f35;
+$background: #DAF0FB;
+$headers: #326EAE;
+$text:#090B0B;
+$box-shadow: #121312d4;
+$inactive: #95b5c2;
+$SFont:calc(.3em + 1vw);
+$MFont:calc(.5em + 1vw);
+$LFont:calc(1em + 1vw);
+
+@mixin button {
+  background: none;
+  border: none;
+  color:$Button;
+  cursor: pointer;
+}
+@mixin buttonHover {
+  font-weight: bolder;
+  color: $lightButton;
+}
+@mixin close-btn{
+    @include button;
+    color: #fff;
+    background-color: $headers;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    border-radius: 0.2em;
+    width: 2em;
+    font-weight: 600;
+    font-size: $LFont;
+    transition: 0.3s;
+  }
+  @mixin close-btn-hover{
+    color: red;
+    scale: 1.5;
+  }
+@mixin glassEffect {
+  /* From https://css.glass */
+  background: rgba(138, 136, 136, 0.13);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(138, 136, 136, 0.12);
+}

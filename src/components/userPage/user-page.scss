@@ -1,0 +1,91 @@
+@import "../../style/var&colors.scss";
+.user-container {
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include glassEffect;
+
+  z-index: 1;
+  .close {
+    @include close-btn;
+    z-index: 1;
+  }
+  .close:hover {
+    @include close-btn-hover;
+  }
+  .signin-box {
+    position: absolute;
+    left: 32%;
+    top: 15%;
+    display: grid;
+    background: #fff;
+    gap: 1em;
+    height: 70%;
+    width: 34%;
+    padding: 2em;
+    border-radius: 1em;
+    h2 {
+      text-align: center;
+    }
+    .input-box {
+      width: 100%;
+      label {
+        font-weight: 600;
+        font-size: $MFont;
+      }
+      input {
+        width: 100%;
+        min-height: 3em;
+        font-size: $SFont;
+        background: none;
+        border: none;
+        border-bottom: 1px solid $headers;
+      }
+      input:focus-visible {
+        outline: none;
+        background-color: $background;
+      }
+    }
+
+    .submit {
+      width: 70%;
+      background: none;
+      border: none;
+      @include button;
+      background-color: $lightButton;
+      color: $background;
+      font-size: $MFont;
+      font-weight: 600;
+      border-radius: 1em;
+      transition: 0.3s;
+    }
+    .submit:hover {
+      background-color: $background;
+      color: $lightButton;
+      letter-spacing: 2px;
+      font-weight: bolder;
+    }
+  }
+}
+@media only screen and(max-width:700px) {
+  .user-container {
+    .close {
+      top: 8%;
+      right: 8%;
+    }
+    .signin-box {
+      align-items: baseline;
+      height: 90%;
+      width: 90%;
+      left: 5%;
+      top: 5%;
+      .submit {
+        font-size: $LFont;
+        width: 100%;
+        align-self: baseline;
+      }
+    }
+  }
+}

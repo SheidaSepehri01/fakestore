@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
+.user-container {
+  width: 100%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* From https://css.glass */
+  background: rgba(138, 136, 136, 0.13);
+  border-radius: 16px;
+  -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.4px);
+  -webkit-backdrop-filter: blur(4.4px);
+  border: 1px solid rgba(138, 136, 136, 0.12);
+  z-index: 1;
+}
+
+.user-container .close {
+  background: none;
+  border: none;
+  color: #137547;
+  cursor: pointer;
+  color: #fff;
+  background-color: #326EAE;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border-radius: 0.2em;
+  width: 2em;
+  font-weight: 600;
+  font-size: calc(1em + 1vw);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 1;
+}
+
+.user-container .close:hover {
+  color: red;
+  scale: 1.5;
+}
+
+.user-container .signin-box {
+  position: absolute;
+  left: 32%;
+  top: 15%;
+  display: -ms-grid;
+  display: grid;
+  background: #fff;
+  gap: 1em;
+  height: 70%;
+  width: 34%;
+  padding: 2em;
+  border-radius: 1em;
+}
+
+.user-container .signin-box h2 {
+  text-align: center;
+}
+
+.user-container .signin-box .input-box {
+  width: 100%;
+}
+
+.user-container .signin-box .input-box label {
+  font-weight: 600;
+  font-size: calc(.5em + 1vw);
+}
+
+.user-container .signin-box .input-box input {
+  width: 100%;
+  min-height: 3em;
+  font-size: calc(.3em + 1vw);
+  background: none;
+  border: none;
+  border-bottom: 1px solid #326EAE;
+}
+
+.user-container .signin-box .input-box input:focus-visible {
+  outline: none;
+  background-color: #DAF0FB;
+}
+
+.user-container .signin-box .submit {
+  width: 70%;
+  background: none;
+  border: none;
+  background: none;
+  border: none;
+  color: #137547;
+  cursor: pointer;
+  background-color: #A7D49B;
+  color: #DAF0FB;
+  font-size: calc(.5em + 1vw);
+  font-weight: 600;
+  border-radius: 1em;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-container .signin-box .submit:hover {
+  background-color: #DAF0FB;
+  color: #A7D49B;
+  letter-spacing: 2px;
+  font-weight: bolder;
+}
+
+@media only screen and (max-width: 700px) {
+  .user-container .close {
+    top: 8%;
+    right: 8%;
+  }
+  .user-container .signin-box {
+    -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+            align-items: baseline;
+    height: 90%;
+    width: 90%;
+    left: 5%;
+    top: 5%;
+  }
+  .user-container .signin-box .submit {
+    font-size: calc(1em + 1vw);
+    width: 100%;
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+  }
+}
+/*# sourceMappingURL=user-page.css.map */

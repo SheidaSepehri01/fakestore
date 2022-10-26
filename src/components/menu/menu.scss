@@ -1,0 +1,44 @@
+@import "../../style/var&colors.scss";
+.menu-container {
+  width: 20%;
+  height: 100%;
+  top: 3em;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  background-color: $headers;
+  color: $background;
+  transition: .3s;
+  .close {
+    @include close-btn;
+    background: none;
+  }
+  .close:hover {
+    @include close-btn-hover;
+  }
+
+  .menu-items {
+    display: grid;
+    gap: 1em;
+    padding: 2em;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    color: #fff;
+    font-size: $MFont;
+    li {
+      list-style: none;
+      transition: 0.3s;
+      button {
+        @include button;
+        color: #fff;
+        font-size: $MFont;
+      }
+    }
+    li:hover {
+      scale: 1.2;
+    }
+  }
+}

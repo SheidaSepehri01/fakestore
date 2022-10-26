@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
+.menu-container {
+  width: 20%;
+  height: 100%;
+  top: 3em;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+  background-color: #326EAE;
+  color: #DAF0FB;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.menu-container .close {
+  background: none;
+  border: none;
+  color: #137547;
+  cursor: pointer;
+  color: #fff;
+  background-color: #326EAE;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  border-radius: 0.2em;
+  width: 2em;
+  font-weight: 600;
+  font-size: calc(1em + 1vw);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background: none;
+}
+
+.menu-container .close:hover {
+  color: red;
+  scale: 1.5;
+}
+
+.menu-container .menu-items {
+  display: -ms-grid;
+  display: grid;
+  gap: 1em;
+  padding: 2em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  color: #fff;
+  font-size: calc(.5em + 1vw);
+}
+
+.menu-container .menu-items li {
+  list-style: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.menu-container .menu-items li button {
+  background: none;
+  border: none;
+  color: #137547;
+  cursor: pointer;
+  color: #fff;
+  font-size: calc(.5em + 1vw);
+}
+
+.menu-container .menu-items li:hover {
+  scale: 1.2;
+}
+/*# sourceMappingURL=menu.css.map */

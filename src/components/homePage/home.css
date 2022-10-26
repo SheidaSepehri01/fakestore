@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
+.home-header {
+  margin-top: 5%;
+  width: 100%;
+  height: 35em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.home-header .header-slider {
+  width: 60%;
+  height: 90%;
+  padding: 1em;
+  position: relative;
+  left: 0em;
+}
+
+.catagorys {
+  width: 100%;
+  height: 100%;
+  gap: 1em;
+  padding: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 700px) {
+  .home-header .header-slider {
+    width: 100%;
+  }
+  .catagorys {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+/*# sourceMappingURL=home.css.map */
