@@ -150,7 +150,7 @@
 
 .catagory-page .product-page .close {
   position: absolute;
-  top: 1.5em;
+  top: 2em;
   right: 1em;
   font-size: calc(1em + 1vw);
   font-weight: 600;
