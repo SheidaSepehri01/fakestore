@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/fakestore/static/css/main.21a4635a.css",
-    "main.js": "/fakestore/static/js/main.a3610c56.js",
+    "main.css": "/fakestore/static/css/main.d02555f9.css",
+    "main.js": "/fakestore/static/js/main.e7e2dbf1.js",
     "static/js/787.6148a7f3.chunk.js": "/fakestore/static/js/787.6148a7f3.chunk.js",
     "static/media/alina-rubo-HjO5vw_PP5c-unsplash.jpg": "/fakestore/static/media/alina-rubo-HjO5vw_PP5c-unsplash.2e76ceeba5e52164ee48.jpg",
     "static/media/serghei-savchiuc-_mQ37Rxqb9E-unsplash.jpg": "/fakestore/static/media/serghei-savchiuc-_mQ37Rxqb9E-unsplash.c6e132d50ae1b3b4b82c.jpg",
@@ -23,12 +23,12 @@
     "static/media/camille-brodard-VxAwTeiqDao-unsplash.jpg": "/fakestore/static/media/camille-brodard-VxAwTeiqDao-unsplash.50cc1f5fae47638bffc0.jpg",
     "static/media/charlesdeluvio-1-nx1QR5dTE-unsplash.jpg": "/fakestore/static/media/charlesdeluvio-1-nx1QR5dTE-unsplash.0b5438202adcd665afae.jpg",
     "index.html": "/fakestore/index.html",
-    "main.21a4635a.css.map": "/fakestore/static/css/main.21a4635a.css.map",
-    "main.a3610c56.js.map": "/fakestore/static/js/main.a3610c56.js.map",
+    "main.d02555f9.css.map": "/fakestore/static/css/main.d02555f9.css.map",
+    "main.e7e2dbf1.js.map": "/fakestore/static/js/main.e7e2dbf1.js.map",
     "787.6148a7f3.chunk.js.map": "/fakestore/static/js/787.6148a7f3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.21a4635a.css",
-    "static/js/main.a3610c56.js"
+    "static/css/main.d02555f9.css",
+    "static/js/main.e7e2dbf1.js"
   ]
 }
