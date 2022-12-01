@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Slider } from "../slider/reactSlider";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,59 +13,75 @@ export const ProductPage = ({
   setProductClicked,
   ChildToParent,
 }) => {
- /*
-برا قطعی نت
-این object product 
-رو ساختم 
-let product={
-  id: "1",
-images: [
-  require("../../images/all/camille-brodard-VxAwTeiqDao-unsplash.jpg"),
-  require("../../images/all/crystalweed-cannabis-QrK0mgbk2r0-unsplash.jpg"),
-],
-title: "glasses",
-thumbnail: require("../../images/all/crystalweed-cannabis-QrK0mgbk2r0-unsplash.jpg"),
-price: 66.9,
-brand: "gucci",
-description:
-  "lorm ipsom la;fjejf l;iuel;sdnfljuie elji l;hef vihfd l;jie lkjfi",
-rating: 4.3,
-stock: 5,
-} 
-*/
-
-
-const [click, setClick] = useState({
+  const [click, setClick] = useState({
     addToCart: false,
   });
+
+  const defaultImage = require("../../images/04f1bc09a3a16f5efc155fe9ea829cbc.webp");
+  const defaultRate = 0;
+  console.log( product.rating)
   return (
     <div
       style={{ display: clicked ? "grid" : "none" }}
       className="product-page"
     >
-      <button
-        className="close"
-        onClick={() =>
-          setProductClicked((prevProductClicked) => ({
-            ...prevProductClicked,
-            clicked: false,
-          }))
-        }
-      >
-        <FontAwesomeIcon icon={solid("arrow-left")} />
-      </button>
+      <Link to="/fakestore/catagoryPage">
+        <button
+          className="close"
+          onClick={() =>
+            setProductClicked((prevProductClicked) => ({
+              ...prevProductClicked,
+              clicked: false,
+            }))
+          }
+        >
+          <FontAwesomeIcon icon={solid("arrow-left")} />
+        </button>
+      </Link>
 
       <div className="product">
         <div className="image-box">
-          <h2 className="title">{product.title}</h2>
-          <div class="product-image">
-            <img src={product.image} />
+          <h2 className="title">
+            {product.title === null ||
+            product.title === undefined ||
+            product.title === ""
+              ? "No title for this product :("
+              : product.title}
+          </h2>
+          <div className="product-image">
+            <img
+              src={
+                product.image === null ||
+                product.image === undefined ||
+                product.image === ""
+                  ? defaultImage
+                  : product.image
+              }
+              alt={
+                product.image === null ||
+                product.image === undefined ||
+                product.image === ""
+                  ? "sorry our api provider is tasetless and didn't provide any images for this product"
+                  : "product Image."
+              }
+            />
           </div>
         </div>
         <div className="description">
           <div>
-            <h4>title: {product.title}</h4>
-            <p>{product.description}</p>
+            <h4>
+              title:{" "}
+              {product.title === null ||
+              product.title === undefined ||
+              product.title === ""
+                ? "No title for this product :("
+                : product.title}
+            </h4>
+            <p>
+              {product.description === null || product.description === ""
+                ? "Sorry Api provider is tasteless and didn't provide any description for this product."
+                : product.description}
+            </p>
           </div>
 
           <ul className="product-info">
@@ -74,7 +91,10 @@ const [click, setClick] = useState({
             </li>
             <li>
               <FontAwesomeIcon icon={solid("star")} />
-              {product.rating.rate}
+              {
+                product.rating === undefined
+               ? defaultRate : product.rating
+              }
             </li>
           </ul>
           {click.addToCart ? (
@@ -84,10 +104,7 @@ const [click, setClick] = useState({
                 setClick((prev) => ({ ...prev, addToCart: true }));
                 ChildToParent((prevData) => ({
                   ...prevData,
-                  cart: [
-                    ...prevData.cart,
-                    product
-                  ],
+                  cart: [...prevData.cart, product],
                 }));
               }}
             >

@@ -30,7 +30,6 @@
     position: fixed;
     top: 0;
     z-index: 1;
-
     .nav-bar {
       padding: 1em;
       background: $headers;
@@ -42,7 +41,7 @@
         display: flex;
         gap: 1em;
       }
-      button{
+      button , a{
         @include button;
         font-size: $MFont;
         transition: .3s;
@@ -97,6 +96,13 @@
 }
 @media only screen and(max-width:900px){
   .App{
+    .header{
+      .nav-bar{
+        button , a{
+          font-size: $LFont;
+        }
+      }
+    }
     .cardsBox{
       padding: 3em;
     }

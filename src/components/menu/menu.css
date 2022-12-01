@@ -109,14 +109,26 @@
     height: 100%;
   }
   .menu-container .menu-items {
+    width: 100%;
     -ms-flex-line-pack: center;
         align-content: center;
     justify-items: center;
   }
   .menu-container .menu-items li {
-    text-align: center;
+    height: 5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    font-size: calc(1em + 1vw);
   }
   .menu-container .menu-items li .theme {
+    font-size: calc(1em + 1vw);
     text-align: center;
   }
   .menu-container .menu-items li:hover {

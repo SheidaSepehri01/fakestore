@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { ProductsCard } from "./itemCard";
 import { ProductPage } from "./productPage";
-import "./products.css";
-import "./responsive.css"
+import "./products.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   solid,
@@ -16,13 +16,13 @@ export const CatagoryPage = ({ catagoryName, link, ChildToParent }) => {
       clicked: false,
       item: {
         image: [],
-        rating:{
-          rate:0
-        }
+        rating: {
+          rate: 0,
+        },
       },
     };
   });
-console.log(productClicked.item)
+  
   return (
     <div className="catagory-page">
       <ProductsCard
@@ -30,22 +30,24 @@ console.log(productClicked.item)
         setProductClicked={setProductClicked}
         ChildToParent={ChildToParent}
       />
-      <button
-        className="close"
-        onClick={() =>
-          ChildToParent((prevdata) => ({
-            ...prevdata,
-            catagoryClicked: {
-              clicked: false,
-            },
-            userBtnClicked: false,
-            cartBtnClicked: false,
-            menuBtnClicked: false,
-          }))
-        }
-      >
-        <FontAwesomeIcon icon={solid("arrow-left")} />
-      </button>
+      <Link to="/fakestore">
+        <button
+          className="close"
+          onClick={() =>
+            ChildToParent((prevdata) => ({
+              ...prevdata,
+              catagoryClicked: {
+                clicked: false,
+              },
+              userBtnClicked: false,
+              cartBtnClicked: false,
+              menuBtnClicked: false,
+            }))
+          }
+        >
+          <FontAwesomeIcon icon={solid("arrow-left")} />
+        </button>
+      </Link>
       <ProductPage
         product={productClicked.item}
         clicked={productClicked.clicked}

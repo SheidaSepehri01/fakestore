@@ -5,6 +5,7 @@ import {
   regular,
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { Link } from "react-router-dom";
 
 export const Header = ({ setClicked }) => {
   return (
@@ -17,7 +18,9 @@ export const Header = ({ setClicked }) => {
               setClicked((prevData) => ({ ...prevData, userBtnClicked: true }));
             }}
           >
-            <FontAwesomeIcon icon={solid("user")} />
+            <Link to="/fakestore/Login">
+              <FontAwesomeIcon icon={solid("user")} />
+            </Link>
           </button>
           <button
             type="close"
@@ -32,7 +35,9 @@ export const Header = ({ setClicked }) => {
               }));
             }}
           >
-            <FontAwesomeIcon icon={solid("house")} />
+                <Link to="/fakestore">
+                 <FontAwesomeIcon icon={solid("house")} />
+                </Link>
           </button>
         </div>
 
@@ -43,7 +48,9 @@ export const Header = ({ setClicked }) => {
               setClicked((prevData) => ({ ...prevData, cartBtnClicked: true }));
             }}
           >
-            <FontAwesomeIcon icon={solid("bag-shopping")} />
+          <Link to="/fakestore/cart">
+          <FontAwesomeIcon icon={solid("basket-shopping")} />
+            </Link>
           </button>
           <button
             className="menu-btn"

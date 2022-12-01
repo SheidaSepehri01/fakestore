@@ -4,7 +4,7 @@ import { CatagoryPage } from "./components/product pages/CatagoryPage";
 import { useState } from "react";
 import { UserPage } from "./components/userPage/userPage";
 import { Cart } from "./components/cart/cart";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState({
@@ -29,13 +29,13 @@ function App() {
       <div className="App">
         <Routes>
           <Route
-            path="/Login"
+            path="/fakestore/Login"
             element={
               <UserPage clicked={data.userBtnClicked} setClicked={setData} />
             }
           ></Route>
           <Route
-            path="/cart"
+            path="/fakestore/cart"
             element={
               <Cart
                 clicked={data.cartBtnClicked}
@@ -49,7 +49,7 @@ function App() {
         
           {data.catagoryClicked.clicked ? (
             <Route
-              path="/catagoryPage"
+              path="/fakestore/catagoryPage"
               element={
                 <CatagoryPage
                   catagoryName={data.catagoryClicked.name}
@@ -60,7 +60,7 @@ function App() {
             ></Route>
           ) : (
             <Route
-              path="/"
+              path="/fakestore"
               element={
                 <HomePage ChildToParent={ChildToParent} setData={setData} 
                 menuClicked={data.menuBtnClicked}

@@ -8,13 +8,16 @@
   @include glassEffect;
 
   z-index: 1;
-  .close {
-    @include close-btn;
-    z-index: 1;
+  a {
+    .close {
+      @include close-btn;
+      z-index: 1;
+    }
+    .close:hover {
+      @include close-btn-hover;
+    }
   }
-  .close:hover {
-    @include close-btn-hover;
-  }
+
   .signin-box {
     position: absolute;
     left: 32%;

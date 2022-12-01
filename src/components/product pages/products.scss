@@ -5,13 +5,25 @@
   overflow-x: hidden;
   position: relative;
   padding-top: 5%;
-  .close {
-    @include button;
+  a {
+    .close {
+      @include button;
+      font-size: $LFont;
+      font-weight: 600;
+      position: absolute;
+      right: 1em;
+      top: 0.1em;
+    }
+  }
+  .loading,
+  .error {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: $LFont;
-    font-weight: 600;
-    position: absolute;
-    right: 1em;
-    top: 0.1em;
+    color: $Button;
   }
   .productsCard {
     padding: 1em;
@@ -79,31 +91,38 @@
   }
   .product-page {
     background: $background;
+    grid-template-rows: 5% 90%;
     width: 100%;
     min-height: 100%;
     position: absolute;
     display: grid;
-    align-items: center;
+    align-content: center;
     justify-items: center;
     top: 0px;
 
     button {
       @include button;
     }
-    .close {
-      position: absolute;
-      top: 2em;
-      right: 1em;
-      font-size: $LFont;
-      font-weight: 600;
+    a {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      .close {
+       position: relative !important ;
+        font-size: $LFont;
+        font-weight: 600;
+      }
     }
     .product {
+      position: relative;
+      top: 1em;
       width: 86%;
-      height: 80%;
+      height: 30em;
       background: #fff;
       gap: 1em;
       padding: 2em;
-      align-items: flex-start;
+      align-items: center;
       display: flex;
       justify-content: space-between;
       border-radius: 1em;
@@ -111,15 +130,16 @@
       .image-box {
         width: 50%;
         height: 100%;
-        .title{
+        overflow: auto;
+        .title {
           letter-spacing: 2px;
           text-align: center;
         }
-        .product-image{
-          width:100%;
-          height: 90%;
+        .product-image {
+          width: 100%;
+          height: 27em;
 
-          img{
+          img {
             width: 100%;
             height: 100%;
             object-fit: scale-down;
@@ -152,7 +172,6 @@
             align-items: baseline;
           }
         }
-    
       }
       .add-to-cart {
         width: 100%;
@@ -172,14 +191,59 @@
         align-self: end;
       }
       .add-to-cart:hover {
-        color:$text ;
-        background-color:  $lightButton;
+        color: $text;
+        background-color: $lightButton;
         scale: 1.2em;
       }
       .add-to-cart:active {
         color: $alert;
         background-color: $lightButton;
         letter-spacing: 3px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) and (min-width: 660px) {
+  .catagory-page {
+    .productsCard {
+      ul {
+        grid-template-columns: 45% 45%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 640px) {
+  .catagory-page {
+    .productsCard {
+      ul {
+        justify-items: center;
+        grid-template-columns: 1fr;
+
+        li {
+          width: 100%;
+        }
+      }
+    }
+    .product-page {
+      grid-template-rows: 5% 90%;
+      .product {
+        top: 0;
+        left: 0;
+        width: 99%;
+        height: 100%;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        box-shadow: inset 0px 0px 4px 3px #00000057;
+        .image-box,
+        .description {
+          width: 100%;
+        }
+        .description {
+          border-top: 0.3em dashed $lightButton;
+          border-left: none;
+        }
       }
     }
   }

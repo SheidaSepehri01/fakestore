@@ -58,7 +58,7 @@
   gap: 1em;
 }
 
-.App .header .nav-bar button {
+.App .header .nav-bar button, .App .header .nav-bar a {
   background: none;
   border: none;
   color: #137547;
@@ -127,6 +127,9 @@
 }
 
 @media only screen and (max-width: 900px) {
+  .App .header .nav-bar button, .App .header .nav-bar a {
+    font-size: calc(1em + 1vw);
+  }
   .App .cardsBox {
     padding: 3em;
   }

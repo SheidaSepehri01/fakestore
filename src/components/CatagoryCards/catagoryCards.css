@@ -5,7 +5,7 @@
 }
 
 .catagoryBox {
-  width: 90%;
+  min-width: 200px;
   height: 100%;
   background-color: #fff;
   display: -webkit-box;
@@ -21,15 +21,15 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .catagoryBox h3 {
   padding: 1em;
 }
 
-.catagoryBox img {
+.catagoryBox a img {
   padding: 1em;
   width: 100%;
   height: 90%;
@@ -37,17 +37,17 @@
      object-fit: cover;
 }
 
-.catagoryBox button {
+.catagoryBox a button {
   margin: 1em;
   background: none;
   border: none;
   color: #137547;
   cursor: pointer;
   font-weight: bold;
-  font-size: calc(.5em + 1vw);
+  font-size: calc(0.5em + 1vw);
 }
 
-.catagoryBox button:hover {
+.catagoryBox a button:hover {
   font-weight: bolder;
   color: #A7D49B;
 }

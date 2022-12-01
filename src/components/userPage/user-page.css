@@ -16,7 +16,7 @@
   z-index: 1;
 }
 
-.user-container .close {
+.user-container a .close {
   background: none;
   border: none;
   color: #137547;
@@ -35,7 +35,7 @@
   z-index: 1;
 }
 
-.user-container .close:hover {
+.user-container a .close:hover {
   color: red;
   scale: 1.5;
 }

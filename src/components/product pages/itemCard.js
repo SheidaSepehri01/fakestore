@@ -5,93 +5,74 @@ import {
   regular,
   brands,
 } from "@fortawesome/fontawesome-svg-core/import.macro";
+
 export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
-  
-  /*
-  در صورت قطعی نت isLoaded 
-  مقدار پیش فرض 
-  true 
-  بگیره
-  */
   const [isLoaded, setIsLoaded] = useState(false);
-  
+
   const [error, setError] = useState(null);
-  const [items, setItems] = useState([
-    
-      /*
-      مقدار state
-      در صورت قطعی نت
-       {
-        id: "1",
-        images: [
-          require("../../images/all/camille-brodard-VxAwTeiqDao-unsplash.jpg"),
-          require("../../images/all/crystalweed-cannabis-QrK0mgbk2r0-unsplash.jpg"),
-        ],
-        title: "glasses",
-        thumbnail: require("../../images/all/crystalweed-cannabis-QrK0mgbk2r0-unsplash.jpg"),
-        price: 66.9,
-        brand: "gucci",
-        description:
-          "lorm ipsom la;fjejf l;iuel;sdnfljuie elji l;hef vihfd l;jie lkjfi",
-        rating: 4.3,
-        stock: 5,
-      
-    },
-      */
-   
-  ]);
-/*
-    نت قطعه 
-    useEffect غیر فعال بشه  
-    */
+  const defaultImage = require("../../images/04f1bc09a3a16f5efc155fe9ea829cbc.webp");
+  const [items, setItems] = useState([]);
   {
-useEffect(() => GetProductsOfCatagory(link), []);
+    useEffect(() => GetProductsOfCatagory(link), []);
 
-  function GetProductsOfCatagory(link) {
-    fetch(link)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
+    function GetProductsOfCatagory(link) {
+      fetch(link)
+        .then((res) => res.json())
+        .then(
+          (result) => {
+            setIsLoaded(true);
+            setItems([result.data.products , result.data.name]);
+          },
 
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
+          }
+        );
+    }
   }
-
-  }
-  console.log(items ) 
- 
-
-
+  console.log(items);
   if (error) {
     return (
-      <div className="error">Opps! {error.message}</div>
+      <div className="error">
+        Opps! {error.message}
+        <FontAwesomeIcon icon={solid("face-sad-cry")} size="2xl" />
+      </div>
     );
   } else if (!isLoaded) {
-    return <div className="loading">Loading...</div>;
+    return (
+      <div className="loading">
+        Loading...
+        <FontAwesomeIcon icon={solid("spinner")} size="2xl" spin />
+      </div>
+    );
   } else {
     return (
       <div className="productsCard">
         <div className="card-header">
-          <h3>{items[0].category}</h3>
+          <h3>{items[1]}</h3>
         </div>
         <ul>
-          {items.map((item) => (
+          {items[0].map((item) => (
             <li
               key={item.id}
               onClick={() => setProductClicked({ item: item, clicked: true })}
             >
-              <img src={item.image} />
+              <img
+                src={
+                  item.image === "" ||
+                  item.image === null ||
+                  item.imageSource === null
+                    ? defaultImage
+                    : item.image
+                }
+                alt={"product Image"}
+              />
               <div className="product-info">
                 <button className="addToCart">
                   <FontAwesomeIcon icon={solid("cart-plus")} />
                 </button>
-                price:{item.price}$
+                price:{item.price} $
               </div>
             </li>
           ))}
@@ -100,3 +81,6 @@ useEffect(() => GetProductsOfCatagory(link), []);
     );
   }
 };
+/*
+
+*/

@@ -1,17 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./catagoryCards.css";
 export const CatagoryCards = ({ catagory, imgLink, ChildToParent }) => {
   const links = {
-   
-   "electronics":'https://fakestoreapi.com/products/category/electronics',
-    "jewelery":'https://fakestoreapi.com/products/category/jewelery',
-    "men's clothing":'https://fakestoreapi.com/products/category/mensclothing',
-    "women's clothing":'https://fakestoreapi.com/products/category/womensclothing'
-  
-   
+   "electronics":'https://api.storerestapi.com/categories/phone-and-tablets',
+    "jewelery":'https://api.storerestapi.com/categories/jewlary-and-watches',
+    "men's clothing":'https://api.storerestapi.com/categories/mens-fashion',
+    "women's clothing":'https://api.storerestapi.com/categories/womens-fashion'
   };
 
   return (
+    
     <div
       className="catagoryBox"
       onClick={() => {
@@ -26,9 +25,12 @@ export const CatagoryCards = ({ catagory, imgLink, ChildToParent }) => {
       }}
     >
       <h3>{catagory}</h3>
+      <Link to="/fakestore/catagoryPage">
       <div className="imageBox">
         <img src={imgLink} alt={catagory} />
       </div>
+      </Link>
+      <Link to="/fakestore/catagoryPage">
       <button
         onClick={() => {
           ChildToParent({
@@ -43,6 +45,8 @@ export const CatagoryCards = ({ catagory, imgLink, ChildToParent }) => {
       >
         View more
       </button>
+      </Link>
     </div>
+    
   );
 };

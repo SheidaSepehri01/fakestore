@@ -6,10 +6,14 @@ export const Carousel = ({ pics, caption }) => {
     return (
       <div
         className="slide"
+        key={pics.indexOf(pic)}
+        id={pics.indexOf(pic)}
         style={{ display: pics.indexOf(pic) == slideIndex ? "block" : "none" }}
       >
-        <img src={pic} />
-        <div className="caption"></div>
+        <img src={pic} 
+           key={pics.indexOf(pic)+1}
+        />
+        <div className="caption" key={pics.indexOf(pic)+2} ></div>
       </div>
     );
   });
@@ -58,6 +62,7 @@ export const Carousel = ({ pics, caption }) => {
                 slides.indexOf(slide) === slideIndex ? "dot active" : "dot"
               }
               onClick={() => setSlideIndex(slides.indexOf(slide))}
+              key={slide.id}
             ></span>
           );
         })}
@@ -74,6 +79,7 @@ const CarouselDotMap = ({ slides, slideIndex }) => {
             className={
               slides.indexOf(slide) === slideIndex ? "dot active" : "dot"
             }
+            key={slideIndex}
           ></span>
         );
       })}

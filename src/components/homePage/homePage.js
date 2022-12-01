@@ -1,20 +1,17 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Carousel } from "../carousel/carousel";
-import { Footer } from "../footer/footer"
+import { Footer } from "../footer/footer";
 import { CatagoryCards } from "../CatagoryCards/CatagoryCards";
 import { Header } from "../header/header";
 import { Menu } from "../menu/menu";
 import "./home.css";
 
-export const HomePage = ({ChildToParent , setData, menuClicked, themeBtn}) => {
+export const HomePage = ({ ChildToParent, setData, menuClicked, themeBtn }) => {
   return (
     <>
       <Header setClicked={setData} />
-      <Menu
-            clicked={menuClicked}
-            setClicked={setData}
-            themeBtn={themeBtn}
-          />
+      <Menu clicked={menuClicked} setClicked={setData} themeBtn={themeBtn} />
       <div className="home-header">
         <div className="header-slider">
           <Carousel pics={pics.all} />
@@ -22,13 +19,14 @@ export const HomePage = ({ChildToParent , setData, menuClicked, themeBtn}) => {
       </div>
       <div className="catagorys">
         {catagorys.map((catagory) => {
-          return(
-          <CatagoryCards
-            catagory={catagory[0]}
-            key={catagory[0]}
-            imgLink={catagory[1]}
-            ChildToParent={ChildToParent}
-          />);
+          return (
+            <CatagoryCards
+              catagory={catagory[0]}
+              key={catagory[0]}
+              imgLink={catagory[1]}
+              ChildToParent={ChildToParent}
+            />
+          );
         })}
       </div>
       <Footer />
@@ -63,8 +61,20 @@ export const pics = {
   ],
 };
 const catagorys = [
-  ["electronics",require("../../images/tech/surface-gYDNf4vymRk-unsplash.jpg")],
-  ["jewelery",require("../../images/fasion/charlesdeluvio-1-nx1QR5dTE-unsplash.jpg")],
-  ["men's clothing" , require("../../images/all/serghei-savchiuc-_mQ37Rxqb9E-unsplash.jpg")],
-  ["women's clothing",require("../../images/fasion/content-pixie-ZB4eQcNqVUs-unsplash.jpg")]
+  [
+    "electronics",
+    require("../../images/tech/surface-gYDNf4vymRk-unsplash.jpg"),
+  ],
+  [
+    "jewelery",
+    require("../../images/fasion/charlesdeluvio-1-nx1QR5dTE-unsplash.jpg"),
+  ],
+  [
+    "men's clothing",
+    require("../../images/all/serghei-savchiuc-_mQ37Rxqb9E-unsplash.jpg"),
+  ],
+  [
+    "women's clothing",
+    require("../../images/fasion/content-pixie-ZB4eQcNqVUs-unsplash.jpg"),
+  ],
 ];

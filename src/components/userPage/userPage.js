@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./user-page.css";
 export const UserPage = ({ clicked, setClicked }) => {
   return (
@@ -6,7 +7,8 @@ export const UserPage = ({ clicked, setClicked }) => {
       className="user-container"
       style={{ display: clicked ? "block" : "none" }}
     >
-      <button
+    <Link to="/fakestore">
+    <button
         className="close"
         type="close"
         onClick={() => {
@@ -20,6 +22,8 @@ export const UserPage = ({ clicked, setClicked }) => {
       >
         X
       </button>
+    </Link>
+    
       <div className="signin-box">
         <h2>sign in</h2>
         <div className="input-box">

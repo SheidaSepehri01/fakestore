@@ -28,18 +28,31 @@
   gap: 1em;
   padding: 1em;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 30% 30% 30%;
+  max-width: 100%;
+  overflow: auto;
   align-items: center;
-  justify-items: center;
+  justify-content: center;
 }
-@media only screen and(max-width:900px) {
+@media only screen and(max-width:900px)  and (min-width:650px){
   .home-header {
   margin-top: 10%;
     
   }
   .catagorys {
     grid-template-columns:  45% 45%;
-    justify-items:center;
+    justify-content: center;
 
   }
+}
+@media only screen and (max-width:650px){
+  .home-header {
+    margin-top: 20%;
+      
+    }
+    .catagorys {
+      grid-template-columns: 1fr;
+      justify-content: center;
+  
+    }
 }
