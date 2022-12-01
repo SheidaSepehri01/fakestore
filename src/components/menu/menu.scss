@@ -8,7 +8,7 @@
   z-index: 1;
   background-color: $headers;
   color: $background;
-  transition: .3s;
+  transition: 0.3s;
   .close {
     @include close-btn;
     background: none;
@@ -19,26 +19,65 @@
 
   .menu-items {
     display: grid;
+    grid-template-columns: 1fr;
     gap: 1em;
     padding: 2em;
-    justify-content: space-between;
-    align-items: baseline;
+    justify-content: center;
+    align-content: flex-start;
     width: 100%;
     height: 100%;
-    padding: 2em;
+    padding: 0.5em;
     color: #fff;
     font-size: $MFont;
     li {
+      @include glassEffect;
+      width: 90%;
       list-style: none;
       transition: 0.3s;
+      height: 100%;
+      padding: 0.5em;
+      border-radius: 0.5em;
+      color: $text;
+      font-weight: 600;
       button {
         @include button;
         color: #fff;
         font-size: $MFont;
       }
+      .theme {
+        transition: 0.5s;
+        text-align: start;
+        width: 100%;
+      }
+      .theme.night {
+        color: $Dtext;
+      }
+      .theme.day {
+        color: $text;
+      }
     }
     li:hover {
-      scale: 1.2;
+      scale: 1.05;
+    }
+  }
+}
+@media only screen and(max-width:900px) {
+  .menu-container {
+    width: 100%;
+    height: 100%;
+    .menu-items {
+      align-content: center;
+      justify-items: center;
+      li  {
+        text-align: center;
+        .theme{
+        text-align: center;
+
+        }
+      }
+      li:hover {
+        scale: 1.05;
+      }
     }
   }
 }

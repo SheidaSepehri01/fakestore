@@ -63,8 +63,8 @@
 }
 
 .catagory-page .productsCard li:hover {
-  -webkit-box-shadow: -1px 1px 9px 0px #121312d4;
-          box-shadow: -1px 1px 9px 0px #121312d4;
+  -webkit-box-shadow: -1px 1px 9px 0px #1213125e;
+          box-shadow: -1px 1px 9px 0px #1213125e;
 }
 
 .catagory-page .productsCard li {
@@ -172,8 +172,8 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 1em;
-  -webkit-box-shadow: 0px 1px 7px 0px #121312d4;
-          box-shadow: 0px 1px 7px 0px #121312d4;
+  -webkit-box-shadow: 0px 1px 7px 0px #1213125e;
+          box-shadow: 0px 1px 7px 0px #1213125e;
 }
 
 .catagory-page .product-page .product .image-box {

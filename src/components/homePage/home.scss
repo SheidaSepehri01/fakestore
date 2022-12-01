@@ -1,38 +1,45 @@
-@import"../../style/var&colors.scss";
+@import "../../style/var&colors.scss";
 
-.home-header{
+.home-header {
   margin-top: 5%;
+  width: 100%;
+  height: 35em;
+  display: grid;
+  .header-slider {
     width: 100%;
-    height: 35em;
-    display: flex;
-    .header-slider{
-        width: 60%;
-        height:90%;
-        padding: 1em;
-        position: relative;
-        left: 0em;
-    }
-    
-}
-.catagorys{
-    width: 100%;
-    height: 100%;
-    gap: 1em;
+    height: 36em;
     padding: 1em;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    align-items: center;
-    justify-items: center;
-}
-@media only screen and(max-width:700px) {
-    .home-header{
-        .header-slider{
-            width: 100%;
+    position: relative;
+    left: 0em;
+    .carousel-box {
+      padding: 0;
+      border-radius: 0;
+      .slide {
+        img {
+          border-radius: 0.3em;
         }
+      }
     }
-    .catagorys{
-    grid-template-columns: auto auto;
+  }
+}
+.catagorys {
+  width: 100%;
+  height: 100%;
+  gap: 1em;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: center;
+  justify-items: center;
+}
+@media only screen and(max-width:900px) {
+  .home-header {
+  margin-top: 10%;
+    
+  }
+  .catagorys {
+    grid-template-columns:  45% 45%;
+    justify-items:center;
 
-    }
-  
+  }
 }

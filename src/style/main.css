@@ -125,4 +125,15 @@
       -ms-flex-align: baseline;
           align-items: baseline;
 }
+
+@media only screen and (max-width: 900px) {
+  .App .cardsBox {
+    padding: 3em;
+  }
+  .App .footer .footerContent ul {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    justify-items: normal;
+  }
+}
 /*# sourceMappingURL=main.css.map */

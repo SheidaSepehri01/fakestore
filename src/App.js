@@ -1,11 +1,10 @@
 import "./style/main.css";
-import { Header, HeaderMenu } from "./components/header/header";
 import { HomePage } from "./components/homePage/homePage";
-import { CatagoryPage } from "./components/products/CatagoryPage";
+import { CatagoryPage } from "./components/product pages/CatagoryPage";
 import { useState } from "react";
 import { UserPage } from "./components/userPage/userPage";
 import { Cart } from "./components/cart/cart";
-import { Menu } from "./components/menu/menu";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   const [data, setData] = useState({
@@ -16,6 +15,7 @@ function App() {
     cartBtnClicked: false,
     menuBtnClicked: false,
     cart: [],
+    themeBtn: "day",
   });
   function ParentTochild(data) {}
 
@@ -23,31 +23,56 @@ function App() {
     //data format{ name: any}
     setData(data);
   }
- 
+
   return (
-    <div className="App">
-      <Header setClicked={setData} />
-      <UserPage clicked={data.userBtnClicked} setClicked={setData} />
-      <Cart
-        clicked={data.cartBtnClicked}
-        setClicked={setData}
-        products={data.cart}
-        setProducts={setData}
-      />
-      <Menu clicked={data.menuBtnClicked} setClicked={setData} />
-      {data.catagoryClicked.clicked ? (
-        <CatagoryPage
-          catagoryName={data.catagoryClicked.name}
-          link={data.catagoryClicked.link}
-          ChildToParent={ChildToParent}
-        />
-      ) : (
-        <HomePage ChildToParent={ChildToParent} />
-      )}
     
-    </div>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/Login"
+            element={
+              <UserPage clicked={data.userBtnClicked} setClicked={setData} />
+            }
+          ></Route>
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                clicked={data.cartBtnClicked}
+                setClicked={setData}
+                products={data.cart}
+                setProducts={setData}
+              />
+            }
+          ></Route>
+
+        
+          {data.catagoryClicked.clicked ? (
+            <Route
+              path="/catagoryPage"
+              element={
+                <CatagoryPage
+                  catagoryName={data.catagoryClicked.name}
+                  link={data.catagoryClicked.link}
+                  ChildToParent={ChildToParent}
+                />
+              }
+            ></Route>
+          ) : (
+            <Route
+              path="/"
+              element={
+                <HomePage ChildToParent={ChildToParent} setData={setData} 
+                menuClicked={data.menuBtnClicked}
+                themeBtn={data.themeBtn}
+                />
+              }
+            ></Route>
+          )}
+        </Routes>
+      </div>
+   
   );
 }
 
 export default App;
-

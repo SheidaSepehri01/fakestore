@@ -13,8 +13,8 @@
           justify-content: center;
   padding: 1em;
   position: relative;
-  -webkit-box-shadow: -6px 4px 9px 0px #121312d4;
-          box-shadow: -6px 4px 9px 0px #121312d4;
+  -webkit-box-shadow: -6px 4px 9px 0px #1213125e;
+          box-shadow: -6px 4px 9px 0px #1213125e;
   /* From https://css.glass */
   background: rgba(199, 199, 199, 0.12);
   border-radius: 16px;

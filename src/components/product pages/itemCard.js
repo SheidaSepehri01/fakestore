@@ -64,8 +64,7 @@ useEffect(() => GetProductsOfCatagory(link), []);
   }
 
   }
-  console.log(items
-    ) 
+  console.log(items ) 
  
 
 

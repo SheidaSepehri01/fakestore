@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { ProductsCard } from "./productsCard";
+import { ProductsCard } from "./itemCard";
 import { ProductPage } from "./productPage";
 import "./products.css";
+import "./responsive.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   solid,

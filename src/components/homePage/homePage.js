@@ -2,11 +2,19 @@ import React, { useState } from "react";
 import { Carousel } from "../carousel/carousel";
 import { Footer } from "../footer/footer"
 import { CatagoryCards } from "../CatagoryCards/CatagoryCards";
+import { Header } from "../header/header";
+import { Menu } from "../menu/menu";
 import "./home.css";
 
-export const HomePage = ({ChildToParent}) => {
+export const HomePage = ({ChildToParent , setData, menuClicked, themeBtn}) => {
   return (
     <>
+      <Header setClicked={setData} />
+      <Menu
+            clicked={menuClicked}
+            setClicked={setData}
+            themeBtn={themeBtn}
+          />
       <div className="home-header">
         <div className="header-slider">
           <Carousel pics={pics.all} />
@@ -60,12 +68,3 @@ const catagorys = [
   ["men's clothing" , require("../../images/all/serghei-savchiuc-_mQ37Rxqb9E-unsplash.jpg")],
   ["women's clothing",require("../../images/fasion/content-pixie-ZB4eQcNqVUs-unsplash.jpg")]
 ];
-const links = {
-  smartphones: "https://dummyjson.com/products/category/smartphones",
-  laptops:"https://dummyjson.com/products/category/laptops",
-  furniture: "https://dummyjson.com/products/category/furniture",
-  sunglasses: "https://dummyjson.com/products/category/sunglasses",
-  fragrances:"https://dummyjson.com/products/category/fragrances",
-  'womens-bags':"https://dummyjson.com/products/category/womens-bags",
-  skincare: "https://dummyjson.com/products/category/skincare",
-};

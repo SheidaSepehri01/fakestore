@@ -6,11 +6,23 @@ $alert: #da2f35;
 $background: #DAF0FB;
 $headers: #326EAE;
 $text:#090B0B;
-$box-shadow: #121312d4;
+$box-shadow: #1213125e;
 $inactive: #95b5c2;
+
 $SFont:calc(.3em + 1vw);
 $MFont:calc(.5em + 1vw);
 $LFont:calc(1em + 1vw);
+
+//----- dark theme  colors -------
+$DButton: #7D6799;
+$DlightButton: #ebadfe;
+$Dbackground:#2d3a48;;
+$Dheaders:#1f2426;
+$Dtext:#e3e6e6;
+$Dbox-shadow: #8f8f8f62;
+$Dinactive: #887d8f;
+
+
 
 @mixin button {
   background: none;

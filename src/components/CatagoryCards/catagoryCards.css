@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
 .catagoryBox:hover {
-  -webkit-box-shadow: 0px 0px 16px 3px #121312d4;
-          box-shadow: 0px 0px 16px 3px #121312d4;
+  -webkit-box-shadow: 0px 0px 16px 3px #1213125e;
+          box-shadow: 0px 0px 16px 3px #1213125e;
 }
 
 .catagoryBox {
@@ -21,8 +21,8 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .catagoryBox h3 {

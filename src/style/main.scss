@@ -95,3 +95,20 @@
     }
   }
 }
+@media only screen and(max-width:900px){
+  .App{
+    .cardsBox{
+      padding: 3em;
+    }
+    .footer {
+      .footerContent{
+        ul{
+          grid-template-columns: 1fr 1fr;
+          justify-items: normal;
+        }
+      }
+    } 
+  }
+
+ 
+}
