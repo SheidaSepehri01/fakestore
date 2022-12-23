@@ -1,58 +1,171 @@
 @import "../../style/var&colors.scss";
 
-.home-header {
-  margin-top: 5%;
-  width: 100%;
-  height: 35em;
+.home {
+  padding-top: 5%;
   display: grid;
-  .header-slider {
+  grid-template-rows: 40% 60%;
+  .header {
     width: 100%;
-    height: 36em;
-    padding: 1em;
-    position: relative;
-    left: 0em;
-    .carousel-box {
-      padding: 0;
-      border-radius: 0;
-      .slide {
-        img {
-          border-radius: 0.3em;
+    position: fixed;
+    color: $background;
+    padding: 0;
+    margin: 0 !important;
+    border: none;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    .nav-bar {
+      padding: 1em;
+      background: $headers;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      div {
+        display: flex;
+        gap: 1em;
+      }
+      button,
+      a {
+        @include button;
+        background: none !important;
+        font-size: $MFont;
+        transition: 0.3s;
+        color: #fff;
+      }
+      button:active {
+        scale: 1.3;
+      }
+      button:hover {
+        scale: 1.3;
+      }
+    }
+  }
+  .home-header {
+    width: 100%;
+    height: 35em;
+    display: grid;
+    .header-slider {
+      width: 100%;
+      height: 36em;
+      padding: 1em;
+      position: relative;
+      left: 0em;
+      .carousel-box {
+        padding: 0;
+        border-radius: 0;
+        .slide {
+          img {
+            border-radius: 0.3em;
+          }
         }
       }
     }
   }
-}
-.catagorys {
-  width: 100%;
-  height: 100%;
-  gap: 1em;
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 30% 30% 30%;
-  max-width: 100%;
-  overflow: auto;
-  align-items: center;
-  justify-content: center;
-}
-@media only screen and(max-width:900px)  and (min-width:650px){
-  .home-header {
-  margin-top: 10%;
-    
-  }
   .catagorys {
-    grid-template-columns:  45% 45%;
+    width: 100%;
+    height: 100%;
+    gap: 1em;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    max-width: 100%;
+    overflow: auto;
+    align-items: center;
     justify-content: center;
+  }
+  .footer {
+    width: 100%;
+    min-height: 10em;
+    position: relative;
+    bottom: 0em;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color:$headers;
+    .footerContent {
+      height:100%;
+      ul {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 2em;
+        justify-items: center;
+        align-self: center;
+        gap: 1em;
+        width: 100%;
+        li{
+          font-weight: 600;
+          color:$background;
+          list-style: none;
+          display: flex;
+          gap: 1em;
+          align-items: baseline;
+        }
+      }
+    }
+  }
 
+}
+.home.night {
+  @include darkTheme;
+  .header {
+    .nav-bar {
+      background: $Dheaders;
+      button,
+      a {
+        color: $DButton !important;
+        background-color: none;
+      }
+      button:hover,
+      a:hover {
+        color: $DButton !important;
+        background-color: none;
+      }
+    }
+  
+  }
+  .carousel-box {
+    button , span{
+    background: $DButton;
+    }
+    button:hover , span:hover{
+      background: $DlightButton;
+
+    }
+  }
+  .footer{
+    background: $Dheaders;
+    .footerContent {
+     ul{
+      li{
+        color:$DButton;
+    }
+     } 
+    } 
+}
+}
+@media only screen and(max-width:900px) and (min-width: 650px) {
+  .home {
+    .home-header {
+      margin-top: 10%;
+    }
+    .catagorys {
+      grid-template-columns: 45% 45%;
+      justify-content: center;
+    }
   }
 }
-@media only screen and (max-width:650px){
-  .home-header {
-    margin-top: 20%;
-      
+@media only screen and (max-width: 650px) {
+  .home {
+    .home-header {
+      margin-top: 20%;
     }
     .catagorys {
       grid-template-columns: 1fr;
       justify-content: center;
-  
     }
+  }
+  
 }
+

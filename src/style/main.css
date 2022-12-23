@@ -12,6 +12,27 @@
           box-sizing: border-box;
 }
 
+.App.night {
+  background: #202124;
+  color: #e3e6e6;
+  -webkit-box-shadow: #8f8f8f62 !important;
+          box-shadow: #8f8f8f62 !important;
+}
+
+.App.night Button {
+  background: #7D6799;
+  color: #e3e6e6;
+}
+
+.App.night button:hover {
+  background: #ebadfe;
+  color: #7D6799;
+}
+
+.App.night .inactive {
+  color: #887d8f !important;
+}
+
 .App {
   min-height: 100vh;
   width: 100%;
@@ -27,103 +48,12 @@
   position: relative;
 }
 
-.App .header {
-  width: 100%;
-  position: fixed;
-  color: #DAF0FB;
-  padding: 0;
-  margin: 0 !important;
-  border: none;
-  position: fixed;
-  top: 0;
-  z-index: 1;
-}
-
-.App .header .nav-bar {
-  padding: 1em;
-  background: #326EAE;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.App .header .nav-bar div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1em;
-}
-
-.App .header .nav-bar button, .App .header .nav-bar a {
-  background: none;
-  border: none;
-  color: #137547;
-  cursor: pointer;
-  font-size: calc(.5em + 1vw);
-  -webkit-transition: .3s;
-  transition: .3s;
-  color: #fff;
-}
-
-.App .header .nav-bar button:active {
-  scale: 1.3;
-}
-
-.App .header .nav-bar button:hover {
-  scale: 1.3;
-}
-
 .App .cardsBox {
   overflow: hidden;
   width: 75%;
   height: 100%;
   margin: 1em 0em;
   padding: 1em;
-}
-
-.App .footer {
-  width: 100%;
-  min-height: 10em;
-  position: relative;
-  bottom: 0em;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-  background-color: #326EAE;
-}
-
-.App .footer .footerContent {
-  height: 100%;
-}
-
-.App .footer .footerContent ul {
-  height: 100%;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  padding: 2em;
-  justify-items: center;
-  -ms-grid-row-align: center;
-      align-self: center;
-  gap: 1em;
-  width: 100%;
-}
-
-.App .footer .footerContent ul li {
-  color: #DAF0FB;
-  list-style: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 1em;
-  -webkit-box-align: baseline;
-      -ms-flex-align: baseline;
-          align-items: baseline;
 }
 
 @media only screen and (max-width: 900px) {

@@ -44,22 +44,35 @@
         color: #fff;
         font-size: $MFont;
       }
-      .theme {
+      button.theme {
         transition: 0.5s;
-        text-align: start;
+        text-align: center;
         width: 100%;
-      }
-      .theme.night {
-        color: $Dtext;
-      }
-      .theme.day {
+        background: none !important;
         color: $text;
+
+      }
+      button.theme.night {
+        color: $Dtext;
+        background: none;
+      }
+      button.theme.day {
+        color: $text;
+           background: none;
       }
     }
     li:hover {
       scale: 1.05;
     }
   }
+}
+.menu-container.night{
+    background: $Dheaders;
+    color: $DButton;
+    button{
+      color: $DButton;
+    }
+  
 }
 @media only screen and(max-width:900px) {
   .menu-container {
@@ -86,3 +99,4 @@
     }
   }
 }
+

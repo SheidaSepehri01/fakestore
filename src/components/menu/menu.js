@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../contexts/themeContext";
+import { solid , regular } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./menu.css";
-export const Menu = ({ setClicked, clicked, themeBtn }) => {
+
+export const Menu = ({ setClicked, clicked }) => {
+
+  const themeBtn = useContext(ThemeContext) 
+
   return (
     <div
-      className="menu-container"
+      className={themeBtn === 'night' ? "night menu-container":"menu-container" }
       style={{ display: clicked ? "block" : "none" }}
     >
       <ul className="menu-items">
@@ -23,7 +31,11 @@ export const Menu = ({ setClicked, clicked, themeBtn }) => {
                   }))
             }
           >
-            {themeBtn === "day" ? 'night' : 'day'}
+            {themeBtn === "day" ? 
+            <FontAwesomeIcon icon={regular("moon")} />
+             :
+            <FontAwesomeIcon icon={solid("sun")} />
+             }
           </button>
         </li>
 

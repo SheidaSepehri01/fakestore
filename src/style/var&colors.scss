@@ -16,13 +16,29 @@ $LFont:calc(1em + 1vw);
 //----- dark theme  colors -------
 $DButton: #7D6799;
 $DlightButton: #ebadfe;
-$Dbackground:#2d3a48;;
-$Dheaders:#1f2426;
+$Dbackground:#202124;
+$DlightBackground: #352b42ca;
+$Dheaders:#f1f1fe;
 $Dtext:#e3e6e6;
 $Dbox-shadow: #8f8f8f62;
 $Dinactive: #887d8f;
 
-
+@mixin darkTheme{
+  background:$Dbackground;
+  color: $Dtext;
+  box-shadow: $Dbox-shadow !important;
+  Button{
+    background: $DButton;
+    color:$Dtext;
+  }
+  button:hover{
+    background: $DlightButton;
+    color:$DButton;
+  }
+  .inactive{
+    color: $Dinactive !important;
+  }
+}
 
 @mixin button {
   background: none;

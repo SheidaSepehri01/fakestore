@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./carousel.css";
+
 export const Carousel = ({ pics, caption }) => {
+
   const [slideIndex, setSlideIndex] = useState(0);
+
   const slides = pics.map((pic) => {
     return (
       <div
@@ -10,15 +13,16 @@ export const Carousel = ({ pics, caption }) => {
         id={pics.indexOf(pic)}
         style={{ display: pics.indexOf(pic) == slideIndex ? "block" : "none" }}
       >
-        <img src={pic} 
-           key={pics.indexOf(pic)+1}
-        />
-        <div className="caption" key={pics.indexOf(pic)+2} ></div>
+        <img src={pic} key={pics.indexOf(pic) + 1} />
+        {caption && <div className="caption" key={pics.indexOf(pic) + 2}></div>}
       </div>
     );
   });
+
   useEffect(() => {
+
     const autoslider = setInterval(() => {
+
       if (slideIndex >= 0) {
         setSlideIndex((previousSlideIndex) =>
           slideIndex < slides.length - 1 ? previousSlideIndex + 1 : 0
@@ -31,6 +35,7 @@ export const Carousel = ({ pics, caption }) => {
       clearInterval(autoslider);
     };
   }, [slideIndex]);
+
   return (
     <>
       <div className="carousel-box">
@@ -62,7 +67,7 @@ export const Carousel = ({ pics, caption }) => {
                 slides.indexOf(slide) === slideIndex ? "dot active" : "dot"
               }
               onClick={() => setSlideIndex(slides.indexOf(slide))}
-              key={slide.id}
+              key={slides.indexOf(slide)}
             ></span>
           );
         })}
@@ -70,6 +75,7 @@ export const Carousel = ({ pics, caption }) => {
     </>
   );
 };
+
 const CarouselDotMap = ({ slides, slideIndex }) => {
   return (
     <div className="dot-box">

@@ -1,13 +1,10 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Link } from "react-router-dom";
 
 export const Header = ({ setClicked }) => {
+ 
   return (
     <div className="header">
       <div className="nav-bar">
@@ -35,9 +32,9 @@ export const Header = ({ setClicked }) => {
               }));
             }}
           >
-                <Link to="/fakestore">
-                 <FontAwesomeIcon icon={solid("house")} />
-                </Link>
+            <Link to="/fakestore">
+              <FontAwesomeIcon icon={solid("house")} />
+            </Link>
           </button>
         </div>
 
@@ -48,10 +45,11 @@ export const Header = ({ setClicked }) => {
               setClicked((prevData) => ({ ...prevData, cartBtnClicked: true }));
             }}
           >
-          <Link to="/fakestore/cart">
-          <FontAwesomeIcon icon={solid("basket-shopping")} />
+            <Link to="/fakestore/cart">
+              <FontAwesomeIcon icon={solid("basket-shopping")} />
             </Link>
           </button>
+          
           <button
             className="menu-btn"
             onClick={() => {

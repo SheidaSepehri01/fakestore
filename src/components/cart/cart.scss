@@ -1,4 +1,5 @@
 @import "../../style/var&colors.scss";
+
 .cart-container {
   display: grid;
   justify-items: center;
@@ -25,7 +26,7 @@
       text-align: center;
       letter-spacing: 1px;
     }
-    a{
+    a {
       .close {
         @include close-btn;
         position: initial;
@@ -37,10 +38,9 @@
         @include close-btn-hover;
       }
     }
- 
   }
-  .empty-cart{
-    min-height: 100vh;
+  .empty-cart {
+    min-height: 100%y;
     flex-flow: column;
     width: 100%;
     color: $inactive;
@@ -49,9 +49,6 @@
     align-items: center;
     font-weight: 600;
     font-size: $LFont;
-    h3{
-
-    }
   }
   ul {
     background-color: #b2d2e3;
@@ -70,8 +67,9 @@
     overflow-y: auto;
     margin-bottom: 10%;
     .product {
+      color: $text;
       display: grid;
-      gap: .2em;
+      gap: 0.2em;
       list-style: none;
       background: #fff;
       width: 100%;
@@ -88,7 +86,7 @@
         justify-content: space-between;
         width: 100%;
 
-        .price{
+        .price {
           color: $Button;
         }
 
@@ -118,12 +116,27 @@
     font-size: $MFont;
     color: $Button;
     border-top: 1px solid $headers;
-    .total{
+    .total {
       margin: 0;
       color: $alert;
       font-size: $MFont;
       font-weight: 600;
     }
+  }
+}
+.cart-container.night {
+  @include darkTheme;
+  a {
+    .close {
+      color: $alert;
+    }
+  }
+  .cart-header {
+    background-color: $Dheaders;
+    color: $DButton;
+  }
+  ul {
+    background-color: $Dheaders;
   }
 }
 @media only screen and (min-width: 500px) and (max-width: 760px) {
@@ -133,7 +146,7 @@
     }
   }
   .cart-footer {
-    .total{
+    .total {
       font-size: $LFont;
     }
   }
@@ -145,7 +158,7 @@
       grid-template-columns: 1fr;
     }
     .cart-footer {
-      .total{
+      .total {
         font-size: $LFont;
       }
     }

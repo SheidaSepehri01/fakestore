@@ -1,4 +1,5 @@
 @import "../../style/var&colors.scss";
+
 .catagory-page {
   height: 100%;
   width: 100%;
@@ -109,7 +110,7 @@
       align-items: center;
       justify-content: flex-end;
       .close {
-       position: relative !important ;
+        position: relative !important ;
         font-size: $LFont;
         font-weight: 600;
       }
@@ -243,6 +244,37 @@
         .description {
           border-top: 0.3em dashed $lightButton;
           border-left: none;
+        }
+      }
+    }
+  }
+}
+.catagory-page.night  {
+  @include darkTheme;
+  .loading,
+  .error{
+    color: $DlightButton;
+  }
+  .product-page {
+    background: $Dbackground;
+    .product {
+      background: $Dheaders;
+      color: $text;
+      .description {
+        background: $Dheaders;
+        color: $text;
+        .product-info{
+          li{
+          color: $DButton;
+          }
+        }
+        button{
+          background: $DButton;
+          color: $Dtext;
+        }
+        button:hover{
+          background: $DlightButton;
+          color: $text;
         }
       }
     }

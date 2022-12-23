@@ -1,13 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&family=Poppins:wght@300&display=swap");
-.home-header {
-  margin-top: 5%;
+.home {
+  padding-top: 5%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 40% 60%;
+      grid-template-rows: 40% 60%;
+}
+
+.home .header {
+  width: 100%;
+  position: fixed;
+  color: #DAF0FB;
+  padding: 0;
+  margin: 0 !important;
+  border: none;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.home .header .nav-bar {
+  padding: 1em;
+  background: #326EAE;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.home .header .nav-bar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+}
+
+.home .header .nav-bar button,
+.home .header .nav-bar a {
+  background: none;
+  border: none;
+  color: #137547;
+  cursor: pointer;
+  background: none !important;
+  font-size: calc(.5em + 1vw);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.home .header .nav-bar button:active {
+  scale: 1.3;
+}
+
+.home .header .nav-bar button:hover {
+  scale: 1.3;
+}
+
+.home .home-header {
   width: 100%;
   height: 35em;
   display: -ms-grid;
   display: grid;
 }
 
-.home-header .header-slider {
+.home .home-header .header-slider {
   width: 100%;
   height: 36em;
   padding: 1em;
@@ -15,16 +74,16 @@
   left: 0em;
 }
 
-.home-header .header-slider .carousel-box {
+.home .home-header .header-slider .carousel-box {
   padding: 0;
   border-radius: 0;
 }
 
-.home-header .header-slider .carousel-box .slide img {
+.home .home-header .header-slider .carousel-box .slide img {
   border-radius: 0.3em;
 }
 
-.catagorys {
+.home .catagorys {
   width: 100%;
   height: 100%;
   gap: 1em;
@@ -43,11 +102,106 @@
           justify-content: center;
 }
 
+.home .footer {
+  width: 100%;
+  min-height: 10em;
+  position: relative;
+  bottom: 0em;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #326EAE;
+}
+
+.home .footer .footerContent {
+  height: 100%;
+}
+
+.home .footer .footerContent ul {
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  padding: 2em;
+  justify-items: center;
+  -ms-grid-row-align: center;
+      align-self: center;
+  gap: 1em;
+  width: 100%;
+}
+
+.home .footer .footerContent ul li {
+  font-weight: 600;
+  color: #DAF0FB;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1em;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.home.night {
+  background: #202124;
+  color: #e3e6e6;
+  -webkit-box-shadow: #8f8f8f62 !important;
+          box-shadow: #8f8f8f62 !important;
+}
+
+.home.night Button {
+  background: #7D6799;
+  color: #e3e6e6;
+}
+
+.home.night button:hover {
+  background: #ebadfe;
+  color: #7D6799;
+}
+
+.home.night .inactive {
+  color: #887d8f !important;
+}
+
+.home.night .header .nav-bar {
+  background: #f1f1fe;
+}
+
+.home.night .header .nav-bar button,
+.home.night .header .nav-bar a {
+  color: #7D6799 !important;
+  background-color: none;
+}
+
+.home.night .header .nav-bar button:hover,
+.home.night .header .nav-bar a:hover {
+  color: #7D6799 !important;
+  background-color: none;
+}
+
+.home.night .carousel-box button, .home.night .carousel-box span {
+  background: #7D6799;
+}
+
+.home.night .carousel-box button:hover, .home.night .carousel-box span:hover {
+  background: #ebadfe;
+}
+
+.home.night .footer {
+  background: #f1f1fe;
+}
+
+.home.night .footer .footerContent ul li {
+  color: #7D6799;
+}
+
 @media only screen and (max-width: 900px) and (min-width: 650px) {
-  .home-header {
+  .home .home-header {
     margin-top: 10%;
   }
-  .catagorys {
+  .home .catagorys {
     -ms-grid-columns: 45% 45%;
         grid-template-columns: 45% 45%;
     -webkit-box-pack: center;
@@ -57,10 +211,10 @@
 }
 
 @media only screen and (max-width: 650px) {
-  .home-header {
+  .home .home-header {
     margin-top: 20%;
   }
-  .catagorys {
+  .home .catagorys {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     -webkit-box-pack: center;

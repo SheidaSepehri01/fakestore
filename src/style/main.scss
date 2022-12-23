@@ -8,6 +8,9 @@
 *{
   box-sizing: border-box;
 }
+.App.night{
+  @include darkTheme;
+}
 .App {
   min-height: 100vh;
   width: 100%;
@@ -20,41 +23,7 @@
   font-family: "Merriweather Sans", sans-serif;
   font-family: "Poppins", sans-serif;
   position: relative;
-  .header {
-    width: 100%;
-    position: fixed;
-    color: $background;
-    padding: 0;
-    margin: 0 !important;
-    border: none;
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    .nav-bar {
-      padding: 1em;
-      background: $headers;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-       
-      div{
-        display: flex;
-        gap: 1em;
-      }
-      button , a{
-        @include button;
-        font-size: $MFont;
-        transition: .3s;
-        color: #fff;
-      }
-      button:active{
-        scale: 1.3;
-      }
-      button:hover{
-        scale: 1.3;
-      }
-    }
-  }
+ 
   .cardsBox{
     overflow: hidden;
     width: 75%;
@@ -63,36 +32,7 @@
     padding: 1em;
   }
 
-  .footer {
-    width: 100%;
-    min-height: 10em;
-    position: relative;
-    bottom: 0em;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    background-color:$headers;
-    .footerContent {
-      height:100%;
-      ul {
-        height: 100%;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        padding: 2em;
-        justify-items: center;
-        align-self: center;
-        gap: 1em;
-        width: 100%;
-        li{
-          color:$background;
-          list-style: none;
-          display: flex;
-          gap: 1em;
-          align-items: baseline;
-        }
-      }
-    }
-  }
+  
 }
 @media only screen and(max-width:900px){
   .App{

@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -21,7 +17,7 @@ export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
         .then(
           (result) => {
             setIsLoaded(true);
-            setItems([result.data.products , result.data.name]);
+            setItems([result.data.products, result.data.name]);
           },
 
           (error) => {
@@ -31,7 +27,8 @@ export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
         );
     }
   }
-  console.log(items);
+ 
+  
   if (error) {
     return (
       <div className="error">
@@ -55,7 +52,11 @@ export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
         <ul>
           {items[0].map((item) => (
             <li
-              key={item.id}
+              key={ item.id === "" ||
+                  item.id === undefined ||
+                  item.id === null
+                    ? items[0].indexOf(item)
+                    : item.id }
               onClick={() => setProductClicked({ item: item, clicked: true })}
             >
               <img
@@ -70,7 +71,7 @@ export const ProductsCard = ({ link, setProductClicked, childToParent }) => {
               />
               <div className="product-info">
                 <button className="addToCart">
-                  <FontAwesomeIcon icon={solid("cart-plus")} />
+                  Buy Now
                 </button>
                 price:{item.price} $
               </div>

@@ -1,10 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
+import { ThemeContext } from "../../contexts/themeContext";
 import { Link } from "react-router-dom";
 import "./user-page.css";
+
 export const UserPage = ({ clicked, setClicked }) => {
+  const themeBtn = useContext(ThemeContext)
+
   return (
     <div
-      className="user-container"
+      className={themeBtn ==='night' ? 'user-container night':'user-container'}
       style={{ display: clicked ? "block" : "none" }}
     >
     <Link to="/fakestore">
@@ -34,7 +38,7 @@ export const UserPage = ({ clicked, setClicked }) => {
           <label>password</label>
           <input type={"password"} required={"required"} />
         </div>
-        <input className="submit" type={"submit"} value={"sign in"} />
+        <button className="submit" type={"submit"}>submit</button>
       </div>
     </div>
   );

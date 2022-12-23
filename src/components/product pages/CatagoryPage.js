@@ -1,16 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { ProductsCard } from "./itemCard";
 import { ProductPage } from "./productPage";
 import "./products.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  solid,
-  regular,
-  brands,
+  solid
 } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { ThemeContext } from "../../contexts/themeContext";
 
-export const CatagoryPage = ({ catagoryName, link, ChildToParent }) => {
+export const CatagoryPage = ({ link, ChildToParent }) => {
+  const themeBtn = useContext(ThemeContext)
   const [productClicked, setProductClicked] = useState(() => {
     return {
       clicked: false,
@@ -24,7 +24,7 @@ export const CatagoryPage = ({ catagoryName, link, ChildToParent }) => {
   });
   
   return (
-    <div className="catagory-page">
+    <div className={themeBtn === 'night' ?"night catagory-page":"catagory-page"}>
       <ProductsCard
         link={link}
         setProductClicked={setProductClicked}

@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { Slider } from "../slider/reactSlider";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  solid,
-  regular,
-  brands,
-} from "@fortawesome/fontawesome-svg-core/import.macro";
+import { solid, regular } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { ThemeContext } from "../../contexts/themeContext";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { addProduct } from "../../features/cartSlice";
+
 export const ProductPage = ({
   product,
   clicked,
@@ -16,14 +16,19 @@ export const ProductPage = ({
   const [click, setClick] = useState({
     addToCart: false,
   });
+  const dispatch = useDispatch();
+  const products = useSelector(state=>state.cart.products)
+console.log(products)
 
   const defaultImage = require("../../images/04f1bc09a3a16f5efc155fe9ea829cbc.webp");
   const defaultRate = 0;
-  console.log( product.rating)
+
+  const themeBtn = useContext(ThemeContext);
+
   return (
     <div
       style={{ display: clicked ? "grid" : "none" }}
-      className="product-page"
+      className={themeBtn === "night" ? "night product-page" : "product-page"}
     >
       <Link to="/fakestore/catagoryPage">
         <button
@@ -91,21 +96,21 @@ export const ProductPage = ({
             </li>
             <li>
               <FontAwesomeIcon icon={solid("star")} />
-              {
-                product.rating === undefined
-               ? defaultRate : product.rating
-              }
+              {product.rating === undefined ||
+              product.rating === null ||
+              product.rating === ""
+                ? defaultRate
+                : product.rating.rate}
             </li>
           </ul>
           {click.addToCart ? (
             <button
               className="add-to-cart"
               onClick={() => {
+                dispatch(addProduct(product));
+
                 setClick((prev) => ({ ...prev, addToCart: true }));
-                ChildToParent((prevData) => ({
-                  ...prevData,
-                  cart: [...prevData.cart, product],
-                }));
+               
               }}
             >
               Added To Cart
@@ -115,11 +120,8 @@ export const ProductPage = ({
             <button
               className="add-to-cart"
               onClick={() => {
+                dispatch(addProduct(product));
                 setClick((prev) => ({ ...prev, addToCart: true }));
-                ChildToParent((prevData) => ({
-                  ...prevData,
-                  cart: [...prevData.cart, product],
-                }));
               }}
             >
               Add To Cart

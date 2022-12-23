@@ -105,6 +105,32 @@
   font-weight: bolder;
 }
 
+.user-container.night {
+  background: #202124;
+  color: #e3e6e6;
+  -webkit-box-shadow: #8f8f8f62 !important;
+          box-shadow: #8f8f8f62 !important;
+}
+
+.user-container.night Button {
+  background: #7D6799;
+  color: #e3e6e6 !important;
+}
+
+.user-container.night button:hover {
+  background: #ebadfe !important;
+  color: #7D6799 !important;
+}
+
+.user-container.night .inactive {
+  color: #887d8f !important;
+}
+
+.user-container.night .signin-box {
+  background-color: #f1f1fe;
+  color: #090B0B;
+}
+
 @media only screen and (max-width: 700px) {
   .user-container .close {
     top: 8%;

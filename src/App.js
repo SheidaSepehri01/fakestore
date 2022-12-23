@@ -5,8 +5,10 @@ import { useState } from "react";
 import { UserPage } from "./components/userPage/userPage";
 import { Cart } from "./components/cart/cart";
 import { Route, Routes } from "react-router-dom";
+import { ThemeContext } from "./contexts/themeContext";
 
 function App() {
+
   const [data, setData] = useState({
     catagoryClicked: {
       clicked: false,
@@ -14,19 +16,19 @@ function App() {
     userBtnClicked: false,
     cartBtnClicked: false,
     menuBtnClicked: false,
-    cart: [],
     themeBtn: "day",
   });
-  function ParentTochild(data) {}
-
+  
   function ChildToParent(data) {
     //data format{ name: any}
     setData(data);
   }
 
+  const themeBtn = data.themeBtn;
+
   return (
-    
-      <div className="App">
+    <div className={themeBtn === 'night'?"night App":"App"}>
+      <ThemeContext.Provider value={themeBtn}>
         <Routes>
           <Route
             path="/fakestore/Login"
@@ -40,13 +42,10 @@ function App() {
               <Cart
                 clicked={data.cartBtnClicked}
                 setClicked={setData}
-                products={data.cart}
-                setProducts={setData}
               />
             }
           ></Route>
 
-        
           {data.catagoryClicked.clicked ? (
             <Route
               path="/fakestore/catagoryPage"
@@ -62,16 +61,18 @@ function App() {
             <Route
               path="/fakestore"
               element={
-                <HomePage ChildToParent={ChildToParent} setData={setData} 
-                menuClicked={data.menuBtnClicked}
-                themeBtn={data.themeBtn}
+                <HomePage
+                  ChildToParent={ChildToParent}
+                  setData={setData}
+                  menuClicked={data.menuBtnClicked}
+                  themeBtn={data.themeBtn}
                 />
               }
             ></Route>
           )}
         </Routes>
-      </div>
-   
+      </ThemeContext.Provider>
+    </div>
   );
 }
 
