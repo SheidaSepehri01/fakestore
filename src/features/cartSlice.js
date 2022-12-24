@@ -16,6 +16,7 @@ export const cartSlice = createSlice({
 
       state.totalPrice += newItem.price;
       state.totalItems += 1;
+
       if (itemExistes) {
         itemExistes.quantity++;
       } else {
@@ -28,25 +29,22 @@ export const cartSlice = createSlice({
           image: newItem.image,
           title: newItem.title,
           quantity: 1,
-       
         });
       }
     },
+
     removeProduct: (state, action) => {
       const item = action.payload;
-
+      state.totalPrice -= item.price;
+      state.totalItems -= 1;
+      
       if (item.quantity === 1) {
         state.products.pop(item);
-        state.totalPrice -= item.price;
-        state.totalItems -= 1;
-
+      
       } else {
-
         state.products.find((product) => {
-          product.id === item.id && product.quantity--
+          product.id === item.id && product.quantity--;
         });
-        state.totalPrice -= item.price;
-        state.totalItems -= 1;
       }
     },
   },

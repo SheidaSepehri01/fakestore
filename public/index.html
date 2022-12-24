@@ -16,5 +16,10 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script>
+      if(ServiceWorker in navigator){
+        navigator.serviceWorker.register("./paw/SW.js")
+      }
+    </script>
   </body>
 </html>
